@@ -15,7 +15,7 @@
 #define MinuteMask 0x02 //C1
 
 //Function prototype
-uint16_t ConvertToBar(uint8_t num);
+uint32_t ConvertToBar(uint8_t num);
 
 //define variables that will be affected by ISR
 volatile uint8_t HourButton = 0;
@@ -191,7 +191,7 @@ uint32_t ConvertToBar(uint8_t num){
  
   uint32_t hold = 0x00000000;
     
-  for(int i = 0, i < num, i++){
+  for(int i = 0; i < num; i++){
     hold |= (1<<i);
   }
   
